@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> -->
+    
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Configuration 3.0//EN" "../mybatis-3-mapper.dtd" >
+<mapper namespace="org.kunggea.demo.mapper.UserMapper">
+
+    <!-- 查询所有用户 -->
+    <select id="selectAllUsers" resultType="org.kunggea.demo.pojo.User">
+        SELECT *
+        FROM users
+    </select>
+    
+    
+    <!-- 查找一个用户 -->
+    <select id="selectUserById" parameterType="int" resultType="org.kunggea.demo.pojo.User">
+         SELECT id, name, email, age FROM users WHERE id = #{id}
+    </select>
+
+
+    <select id="selectUserByName" parameterType="String" resultType="org.kunggea.demo.pojo.User">
+         SELECT id, name, email, age FROM users WHERE name = #{name}
+     </select>
+
+
+   <select id="getUsersByAge" parameterType="int" resultType="org.kunggea.demo.pojo.User">
+        SELECT id, name, email, age FROM users WHERE age = #{age}
+   </select>
+   
+   
+</mapper>
