@@ -40,4 +40,9 @@ public class UserServiceImpl implements UserService{
     public List<User> getUsersByAge(Integer age) {
     	return userMapper.getUsersByAge(age);
     }
+    
+    @Override
+	public List<User> getUsersByAgeRange(Integer ageStart, Integer ageEnd) {
+		return userMapper.getUsersByAgeRange(ageStart, ageEnd);
+	}
 }

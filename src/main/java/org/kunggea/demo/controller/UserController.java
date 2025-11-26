@@ -52,6 +52,18 @@ public class UserController {
 	
 	// added in github 
 	
+	/**
+	 * getUsersByAgeRange 
+	 * @param ageStart
+	 * @param ageEnd
+	 * @return
+	 */
+	@PostMapping("/getUsersByAgeRange")
+	public List<User> getUsersByAgeRange(Integer ageStart, Integer ageEnd) {
+	    // 这里可以根据需要实现按年龄查询用户的逻辑
+		List<User> userList =	userService.getUsersByAgeRange(ageStart, ageEnd);
+	    return userList; // 示例中返回null，实际应返回查询结果
+	}
 	
 	
 	

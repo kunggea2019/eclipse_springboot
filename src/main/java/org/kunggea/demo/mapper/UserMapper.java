@@ -31,4 +31,7 @@ public interface UserMapper {
 
 
 	List<User> getUsersByAge(Integer age);
+
+
+	List<User> getUsersByAgeRange(Integer ageStart, Integer ageEnd);
 }
