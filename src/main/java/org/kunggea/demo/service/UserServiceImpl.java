@@ -45,4 +45,12 @@ public class UserServiceImpl implements UserService{
 	public List<User> getUsersByAgeRange(Integer ageStart, Integer ageEnd) {
 		return userMapper.getUsersByAgeRange(ageStart, ageEnd);
 	}
+
+	@Override
+	public void addUser(User user) {
+		
+		userMapper.insertUser(user);
+		
+	}
+    
 }

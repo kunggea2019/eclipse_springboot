@@ -65,6 +65,18 @@ public class UserController {
 	    return userList; // 示例中返回null，实际应返回查询结果
 	}
 	
+	@PostMapping("/addUser")
+	public String addUser(String name, Integer age) {
+		
+	    User user = new User();
+	    user.setName(name);
+	    user.setAge(age);
+	    user.setEmail(name + "@qq.com"); // 示例中简单生成email
+	    
+	    userService.addUser(user);
+	    
+	    return "User added successfully";
+	}
 	
 	
 }

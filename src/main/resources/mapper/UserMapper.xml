@@ -31,5 +31,12 @@
    <select id="getUsersByAgeRange" parameterType="map" resultType="org.kunggea.demo.pojo.User">
         SELECT id, name, email, age FROM users WHERE age BETWEEN #{ageStart} AND #{ageEnd} 
    </select>
-    
+   
+   <!-- 新增insertUser方法，id与接口方法名一致 -->
+    <insert id="insertUser" parameterType="org.kunggea.demo.pojo.User">
+         INSERT INTO users (name, age, email) 
+                VALUES (#{name}, #{age}, #{email}) <!-- 新增默认email -->
+    </insert>
+        
+        
 </mapper>

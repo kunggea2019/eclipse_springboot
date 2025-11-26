@@ -14,5 +14,6 @@ public interface UserService {
 	 public User getUserByName(String name);
 	 public List<User> getUsersByAge(Integer age);
 	 public List<User> getUsersByAgeRange(Integer ageStart, Integer ageEnd);
+	 public void addUser(User user);
 
 }
