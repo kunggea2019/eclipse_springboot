@@ -47,10 +47,17 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public void addUser(User user) {
+	public int addUser(User user) {
 		
-		userMapper.insertUser(user);
-		
+		// 调用 Mapper 插入用户，接收影响行数（1=成功，0=失败）
+	    int insertCount = userMapper.insertUser(user);
+	    
+	    // 校验插入结果，失败则抛出异常（可被全局异常处理器捕获返回友好提示）
+	    if (insertCount != 1) {
+	        throw new RuntimeException("用户插入失败，影响行数异常：" + insertCount);
+	    }
+	    
+	    return insertCount;
 	}
     
 }
