@@ -27,8 +27,9 @@
         SELECT id, name, email, age FROM users WHERE age = #{age}
    </select>
    
-    <select id="getUsersByAgeRange" parameterType="map" resultType="org.kunggea.demo.pojo.User">
+    
+   <select id="getUsersByAgeRange" parameterType="map" resultType="org.kunggea.demo.pojo.User">
         SELECT id, name, email, age FROM users WHERE age BETWEEN #{ageStart} AND #{ageEnd} 
-    </select>
-   
+   </select>
+    
 </mapper>
