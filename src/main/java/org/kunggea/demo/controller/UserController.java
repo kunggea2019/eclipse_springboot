@@ -73,7 +73,7 @@ public class UserController {
 	    user.setAge(age);
 	    user.setEmail(name + "@qq.com"); // 示例中简单生成email
 	    
-	    int insertCount =userService.addUser(user);
+	    int insertCount = userService.addUser(user);
 	    
 	    if (insertCount != 1) {
 	        return "Failed to add user";
