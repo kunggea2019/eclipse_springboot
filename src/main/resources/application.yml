@@ -15,3 +15,8 @@ mybatis:
   type-aliases-package: org.kunggea.demo.pojo  # 确保与实际包路径一致
   configuration:
     map-underscore-to-camel-case: true
+
+logging:
+  level:
+    root: info
+    org.mybatis: debug
